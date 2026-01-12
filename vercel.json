@@ -1,0 +1,10 @@
+{
+  "name": "Richard Schrotter Portfolio",
+  "version": "1.0.0",
+  "description": "Professional portfolio website with Next.js, TypeScript, and Tailwind CSS",
+  "private": true,
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  }
+}

@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
@@ -19,7 +19,6 @@ export const metadata: Metadata = {
   keywords:
     "Full-Stack Developer, Java, TypeScript, Game Development, Next.js, React",
   authors: [{ name: "Richard Schrotter" }],
-  viewport: "width=device-width, initial-scale=1.0",
   openGraph: {
     type: "website",
     locale: "en_US",
@@ -27,6 +26,12 @@ export const metadata: Metadata = {
     title: "Richard Schrotter | Full-Stack Developer",
     description: "Portfolio of Richard Schrotter - Full-Stack Developer",
   },
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1.0,
+  themeColor: "#0f172a",
 };
 
 export default function RootLayout({
@@ -38,10 +43,6 @@ export default function RootLayout({
     <html lang="en" className="scroll-smooth">
       <head>
         <meta charSet="utf-8" />
-        <meta
-          name="theme-color"
-          content="#0f172a"
-        />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-slate-950 text-white`}
