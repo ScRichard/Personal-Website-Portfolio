@@ -69,7 +69,7 @@ export default function Contact() {
           </h2>
           <div className="h-1 w-40 bg-linear-to-r from-[#62aff3] to-transparent rounded-full mx-auto mb-6"></div>
           <p className="text-gray-400 text-center text-lg max-w-2xl mx-auto">
-            Have a project in mind? Let's collaborate and create something amazing together.
+            Have a project in mind? Let&apos;s collaborate and create something amazing together.
           </p>
         </div>
 

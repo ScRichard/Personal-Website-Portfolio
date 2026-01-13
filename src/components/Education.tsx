@@ -41,7 +41,7 @@ export default function Education() {
             </div>
             <div className="flex-1 space-y-4">
               <div>
-                <h3 className="text-3xl md:text-4xl font-bold text-white mb-2">Bachelor's Degree</h3>
+                <h3 className="text-3xl md:text-4xl font-bold text-white mb-2">Bachelor&apos;s Degree</h3>
                 <p className="text-[#62aff3] text-2xl font-semibold">Computer Science</p>
                 <p className="text-gray-400 text-lg font-medium mt-1">The University of Žilina</p>
               </div>

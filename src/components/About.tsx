@@ -19,7 +19,7 @@ export default function About() {
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.6, ease: "easeOut" },
+      transition: { duration: 0.6 },
     },
   };
 
@@ -47,15 +47,15 @@ export default function About() {
           >
             <div className="space-y-6 text-gray-300 text-lg leading-relaxed text-center">
               <p>
-                I'm Richard Schmidt, a passionate full-stack developer with a love for building elegant solutions to complex problems. With expertise in modern web technologies and a strong foundation in software engineering, I create applications that are not just functional but delightful to use.
+                I&apos;m Richard Schmidt, a passionate full-stack developer with a love for building elegant solutions to complex problems. With expertise in modern web technologies and a strong foundation in software engineering, I create applications that are not just functional but delightful to use.
               </p>
 
               <p>
-                My journey in tech started with curiosity and has evolved into a career dedicated to continuous learning and innovation. I'm driven by the challenge of turning ideas into reality and helping teams build products that make an impact.
+                My journey in tech started with curiosity and has evolved into a career dedicated to continuous learning and innovation. I&apos;m driven by the challenge of turning ideas into reality and helping teams build products that make an impact.
               </p>
 
               <p>
-                When I'm not coding, I love to exercise, explore new places by traveling, and spend time on my other favorite hobbies. I believe in maintaining a healthy work-life balance and constantly challenging myself both professionally and personally. I believe in writing clean, maintainable code and collaborating effectively with teams to achieve shared goals.
+                When I&apos;m not coding, I love to exercise, explore new places by traveling, and spend time on my other favorite hobbies. I believe in maintaining a healthy work-life balance and constantly challenging myself both professionally and personally. I believe in writing clean, maintainable code and collaborating effectively with teams to achieve shared goals.
               </p>
             </div>
           </motion.div>

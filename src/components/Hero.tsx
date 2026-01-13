@@ -78,7 +78,7 @@ export default function Hero() {
               variants={itemVariants}
             >
               <p className="text-gray-300 italic text-lg leading-relaxed">
-                "Code is poetry written in logic. Every line is a chance to create something meaningful."
+                &quot;Code is poetry written in logic. Every line is a chance to create something meaningful.&quot;
               </p>
             </motion.div>
           </div>
