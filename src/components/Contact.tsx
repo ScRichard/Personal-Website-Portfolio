@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { Github, Instagram, Linkedin } from 'lucide-react';
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -23,42 +24,19 @@ export default function Contact() {
     setFormData({ name: '', email: '', message: '' });
   };
 
-  return (
-    <section id="contact" className="bg-black text-white py-20">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-4xl md:text-5xl font-bold mb-12 text-center">Get In Touch</h2>
-        
-        <div className="grid md:grid-cols-2 gap-12">
-          {/* Contact Info */}
-          <div>
-            <h3 className="text-2xl font-bold mb-8">Let's Connect</h3>
-            <div className="space-y-6">
-              <div>
-                <h4 className="text-white font-semibold mb-2">Email</h4>
-                <p className="text-white">hello@example.com</p>
-              </div>
-              <div>
-                <h4 className="text-white font-semibold mb-2">Phone</h4>
-                <p className="text-white">+1 (555) 123-4567</p>
-              </div>
-              <div>
-                <h4 className="text-white font-semibold mb-2">Location</h4>
-                <p className="text-white">San Francisco, CA</p>
-              </div>
-              <div>
-                <h4 className="text-white font-semibold mb-4">Follow Me</h4>
-                <div className="flex gap-4">
-                  <a href="#" className="text-gray-400 hover:text-blue-400 transition-colors">LinkedIn</a>
-                  <a href="#" className="text-gray-400 hover:text-blue-400 transition-colors">GitHub</a>
-                  <a href="#" className="text-gray-400 hover:text-blue-400 transition-colors">Twitter</a>
-                </div>
-              </div>
-            </div>
-          </div>
+  const socials = [
+    { name: 'GitHub', icon: Github, url: '#' },
+    { name: 'Instagram', icon: Instagram, url: '#' },
+    { name: 'LinkedIn', icon: Linkedin, url: '#' }
+  ];
 
-          {/* Contact Form */}
-          <div>
-            <form onSubmit={handleSubmit} className="space-y-4">
+  return (
+    <section id="about" className="bg-black text-white flex flex-col md:w-1/2 mx-auto px-4 py-4">
+
+      <div className="text-xl mb-3 underline underline-offset-4">
+        Contact
+      </div>
+      <form onSubmit={handleSubmit} className="space-y-6">
               <div>
                 <label htmlFor="name" className="block text-sm font-semibold mb-2">
                   Name
@@ -69,11 +47,12 @@ export default function Contact() {
                   name="name"
                   value={formData.name}
                   onChange={handleChange}
-                  className="w-full px-4 py-2 bg-gray-800 border border-gray-700 rounded-lg text-white focus:border-blue-500 focus:outline-none transition-colors"
+                  className="w-full px-4 py-2 bg-black border border-white/30 rounded-lg text-white focus:border-white focus:outline-none transition-colors"
                   placeholder="Your Name"
                   required
                 />
               </div>
+              
               <div>
                 <label htmlFor="email" className="block text-sm font-semibold mb-2">
                   Email
@@ -84,11 +63,12 @@ export default function Contact() {
                   name="email"
                   value={formData.email}
                   onChange={handleChange}
-                  className="w-full px-4 py-2 bg-gray-800 border border-gray-700 rounded-lg text-white focus:border-blue-500 focus:outline-none transition-colors"
+                  className="w-full px-4 py-2 bg-black border border-white/30 rounded-lg text-white focus:border-white focus:outline-none transition-colors"
                   placeholder="your@email.com"
                   required
                 />
               </div>
+              
               <div>
                 <label htmlFor="message" className="block text-sm font-semibold mb-2">
                   Message
@@ -99,21 +79,40 @@ export default function Contact() {
                   value={formData.message}
                   onChange={handleChange}
                   rows={5}
-                  className="w-full px-4 py-2 bg-gray-800 border border-gray-700 rounded-lg text-white focus:border-blue-500 focus:outline-none transition-colors resize-none"
+                  className="w-full px-4 py-2 bg-black border border-white/30 rounded-lg text-white focus:border-white focus:outline-none transition-colors resize-none"
                   placeholder="Your message..."
                   required
                 ></textarea>
               </div>
-              <button
+              
+              <a
                 type="submit"
-                className="w-full bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 rounded-lg transition-colors"
+                className="bg-white w-20 h-12 text-black font-bold py-3 rounded-lg hover:bg-gray-200 transition-colors"
               >
                 Send Message
-              </button>
+              </a>
             </form>
-          </div>
-        </div>
-      </div>
+
+            {/* Socials */}
+            <div className="mt-8 pt-8 border-t border-white/30">
+              <h3 className="text-lg font-semibold text-center mb-6">Connect With Me</h3>
+              <div className="flex justify-center gap-6">
+                {socials.map((social) => {
+                  const Icon = social.icon;
+                  return (
+                    <a
+                      key={social.name}
+                      href={social.url}
+                      className="text-white hover:text-gray-300 transition-colors"
+                      title={social.name}
+                    >
+                      <Icon size={28} />
+                    </a>
+                  );
+                })}
+              </div>
+            </div>
+    
     </section>
   );
 }

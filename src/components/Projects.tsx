@@ -1,57 +1,95 @@
 export default function Projects() {
   const projects = [
     {
-      title: 'E-Commerce Platform',
-      description: 'A full-stack e-commerce solution with user authentication, product catalog, and payment integration.',
-      tech: ['React', 'Node.js', 'MongoDB', 'Stripe'],
+      title: 'Gothaj Next Gen',
+      description: 'Open-source Minecraft 1.8.9 Client - A sophisticated Minecraft client focused on enhancing player capabilities.',
+      features: [
+        'Custom EventBus system for extensibility',
+        'Shader handling via LWJGL',
+        'Integrated IRC chat system',
+        'Custom Cape synchronization system',
+        'SOLID principles implementation'
+      ],
+      tech: ['Java', 'LWJGL', 'Gradle', 'EventBus', "Documentation"],
       link: '#'
     },
     {
-      title: 'Task Management App',
-      description: 'Collaborative task management tool with real-time updates and team collaboration features.',
-      tech: ['Next.js', 'Firebase', 'Tailwind CSS', 'TypeScript'],
+      title: 'Uni 7',
+      description: 'Isometric Game Development Project - A semester project game built with Java and JavaFX, featuring isometric view with robust collision systems and game logic implementation.',
+      features: [
+        'Isometric rendering system',
+        'Collision and physics systems',
+        'Game logic architecture',
+        'SOLID design principles',
+        'Comprehensive JUnit testing',
+        'Custom coordinate-based rendering (x, y, z)'
+      ],
+      tech: ['Java', 'JavaFX', 'JUnit', 'Physics'],
       link: '#'
     },
     {
-      title: 'Weather Dashboard',
-      description: 'Real-time weather application with location-based forecasts and interactive maps.',
-      tech: ['React', 'OpenWeather API', 'Chart.js', 'Geolocation'],
+      title: 'Portfolio Website',
+      description: 'Modern responsive portfolio website showcasing projects and skills with clean design and smooth animations.',
+      features: [
+        'Fully responsive design',
+        'Dark mode theme',
+        'Smooth animations',
+        'Contact form integration',
+        'Project showcase',
+        'Modern UI/UX'
+      ],
+      tech: ['React', 'TypeScript', 'Tailwind CSS', 'Next.js'],
       link: '#'
     },
     {
-      title: 'Social Media Analytics',
-      description: 'Analytics dashboard for tracking social media metrics and engagement across platforms.',
-      tech: ['Vue.js', 'Python', 'PostgreSQL', 'D3.js'],
+      title: 'VoidID (Comming soon)',
+      description: 'Creating and sharing your raver ID and digital identity',
+      features: [
+        'Simlar to link.me but for ravers',
+        'Dark mode theme',
+        'Slick design',
+        'Database structure in PostgreSQL + Redis',
+        'RestAPI built with Java and Spring Boot',
+      ],
+      tech: ['React', 'TypeScript', 'Tailwind CSS', 'Next.js'],
       link: '#'
     }
   ];
 
   return (
-    <section id="projects" className="bg-black text-white py-20">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-4xl md:text-5xl font-bold mb-12 text-center">Projects</h2>
-        
-        <div className="grid md:grid-cols-2 gap-8">
+    <section id="about" className="bg-black text-white flex flex-col md:w-1/2 mx-auto px-4 py-4">
+        <div className="text-xl mb-3 underline underline-offset-4">
+            Projects
+        </div>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
           {projects.map((project, index) => (
-            <div key={index} className="bg-gray-900 border border-white/30 rounded-lg overflow-hidden hover:shadow-lg hover:shadow-white/50 transition-shadow">
-              <div className="p-6">
-                <h3 className="text-2xl font-bold mb-3">{project.title}</h3>
-                <p className="text-white mb-4">{project.description}</p>
-                <div className="flex flex-wrap gap-2 mb-6">
-                  {project.tech.map((tech, i) => (
-                    <span key={i} className="bg-white text-black text-sm px-3 py-1 rounded-full">
-                      {tech}
-                    </span>
+            <div key={index} className="bg-gray-900 border border-white/20 rounded-lg overflow-hidden p-6 flex flex-col justify-between">
+              <h3 className="text-xl mb-3">{project.title}</h3>
+              <p className="text-gray-200 mb-4 text-sm leading-relaxed">{project.description}</p>
+              
+              <div className="mb-4">
+                <h4 className="text-gray-300 font-semibold mb-2 text-sm">Key Features:</h4>
+                <ul className="space-y-1">
+                  {project.features.map((feature, i) => (
+                    <li key={i} className="text-gray-200 text-xs flex items-start">
+                      <span className="mr-2">→</span>
+                      <span>{feature}</span>
+                    </li>
                   ))}
-                </div>
-                <a href={project.link} className="text-white hover:text-gray-300 font-semibold">
-                  View Project →
-                </a>
+                </ul>
               </div>
+              
+              <div className="flex flex-wrap gap-2 mb-4">
+                {project.tech.map((tech, i) => (
+                  <span key={i} className="bg-white text-black text-xs px-2 py-1 rounded-full">
+                    {tech}
+                  </span>
+                ))}
+              </div>
+              <a href="#" className="border border-white/15 drop-shadow-lg px-5 py-3 rounded-2xl hover:border-white/30 hover:text-white/90 transition-all">View Project →</a>
             </div>
           ))}
         </div>
-      </div>
     </section>
   );
 }
