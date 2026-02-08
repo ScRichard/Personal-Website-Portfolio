@@ -10,6 +10,15 @@ export default function Navbar() {
     setIsOpen(!isOpen);
   };
 
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, sectionId: string) => {
+    e.preventDefault();
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+      setIsOpen(false);
+    }
+  };
+
   return (
     <nav className="bg-black shadow-md fixed top-0 w-full z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -17,16 +26,16 @@ export default function Navbar() {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex space-x-8">
-            <a href="#home" className="text-gray-300 hover:text-white transition-colors">
+            <a href="/" onClick={(e) => handleNavClick(e, 'home')} className="text-gray-300 hover:text-white transition-colors">
               Home
             </a>
-            <a href="#about" className="text-gray-300 hover:text-white transition-colors">
+            <a href="/" onClick={(e) => handleNavClick(e, 'about')} className="text-gray-300 hover:text-white transition-colors">
               About
             </a>
-            <a href="#projects" className="text-gray-300 hover:text-white transition-colors">
+            <a href="/" onClick={(e) => handleNavClick(e, 'projects')} className="text-gray-300 hover:text-white transition-colors">
               Projects
             </a>
-            <a href="#contact" className="text-gray-300 hover:text-white transition-colors">
+            <a href="/" onClick={(e) => handleNavClick(e, 'contact')} className="text-gray-300 hover:text-white transition-colors">
               Contact
             </a>
           </div>
@@ -55,9 +64,29 @@ export default function Navbar() {
           <div className="pb-4 animate-fadeIn">
             <div className="flex flex-col space-y-2">
               <a
-                href="#home"
+                href="/"
+                onClick={(e) => handleNavClick(e, 'home')}
                 className="block px-3 py-2 rounded-md text-gray-300 hover:bg-gray-800 transition-colors"
-                onClick={() => setIsOpen(false)}
+              >
+                Home
+              </a>
+              <a
+                href="/"
+                onClick={(e) => handleNavClick(e, 'about')}
+                className="block px-3 py-2 rounded-md text-gray-300 hover:bg-gray-800 transition-colors"
+              >
+                About
+              </a>
+              <a
+                href="/"
+                onClick={(e) => handleNavClick(e, 'projects')}
+                className="block px-3 py-2 rounded-md text-gray-300 hover:bg-gray-800 transition-colors"
+              >
+                Projects
+              </a>
+              <a
+                href="/"
+                onClick={(e) => handleNavClick(e, 'contact')}
               >
                 Home
               </a>

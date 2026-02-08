@@ -55,7 +55,7 @@ export default function Contact() {
   ];
 
   return (
-    <section id="about" className="text-white flex flex-col md:w-3xl mx-auto px-4 py-4">
+    <section id="contact" className="text-white flex flex-col md:w-3xl mx-auto px-4 py-4">
 
       <div className="text-xl mb-3 underline underline-offset-4">
         Contact
