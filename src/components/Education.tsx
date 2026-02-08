@@ -1,7 +1,7 @@
 export default function Education() {
 
   return (
-    <section id="about" className="bg-black text-white flex flex-col md:w-3xl mx-auto px-4 py-4 ň">
+    <section id="about" className="bg-black text-white flex flex-col md:w-3xl mx-auto px-4 py-4 z-1">
       <div className="text-xl mb-3 underline underline-offset-4">
         Education
       </div>

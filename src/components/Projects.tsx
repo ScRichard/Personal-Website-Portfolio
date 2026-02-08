@@ -63,7 +63,7 @@ export default function Projects() {
         </div>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
           {projects.map((project, index) => (
-            <div key={index} className="border border-white/20 rounded-lg overflow-hidden p-6 flex flex-col justify-between">
+            <div key={index} className="border backdrop-blur-lg border-white/20 rounded-lg overflow-hidden p-6 flex flex-col justify-between">
               <h3 className="text-xl mb-3">{project.title}</h3>
               <p className="text-gray-200 mb-4 text-sm leading-relaxed">{project.description}</p>
               

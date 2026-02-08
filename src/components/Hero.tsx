@@ -3,7 +3,7 @@ export default function Hero() {
   const names = "Richard Schmidt".split("");
 
   return (
-    <section id="home" className="bg-black text-white min-h-screen flex flex-col items-center justify-center gap-9">
+    <section id="home" className=" text-white min-h-screen flex flex-col items-center justify-center gap-9 z-1">
       <div>
         <div className="flex flex-wrap items-center justify-center gap-0.5 w-full max-w-5xl">
         {names.map((name, index) => (

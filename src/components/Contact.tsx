@@ -9,6 +9,8 @@ export default function Contact() {
     email: '',
     message: ''
   });
+  const [loading, setLoading] = useState(false);
+  const [status, setStatus] = useState<'idle' | 'success' | 'error'>('idle');
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -18,20 +20,42 @@ export default function Contact() {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
-    setFormData({ name: '', email: '', message: '' });
+    setLoading(true);
+    setStatus('idle');
+
+    try {
+      const response = await fetch('/api/send-email', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        setStatus('success');
+        setFormData({ name: '', email: '', message: '' });
+      } else {
+        setStatus('error');
+      }
+    } catch (error) {
+      console.error('Error sending email:', error);
+      setStatus('error');
+    } finally {
+      setLoading(false);
+    }
   };
 
   const socials = [
-    { name: 'GitHub', icon: Github, url: '#' },
-    { name: 'Instagram', icon: Instagram, url: '#' },
-    { name: 'LinkedIn', icon: Linkedin, url: '#' }
+    { name: 'GitHub', icon: Github, url: 'https://github.com/ScRichard' },
+    { name: 'Instagram', icon: Instagram, url: 'https://www.instagram.com/rchrd.sch' },
+    { name: 'LinkedIn', icon: Linkedin, url: 'https://www.linkedin.com/in/schmidtrich/' }
   ];
 
   return (
-    <section id="about" className="bg-black text-white flex flex-col md:w-3xl mx-auto px-4 py-4">
+    <section id="about" className="text-white flex flex-col md:w-3xl mx-auto px-4 py-4">
 
       <div className="text-xl mb-3 underline underline-offset-4">
         Contact
@@ -85,17 +109,26 @@ export default function Contact() {
                 ></textarea>
               </div>
               
+              {status === 'success' && (
+                <div className="bg-green-900/30 border border-green-500 text-green-400 p-3 rounded-lg text-sm">
+                  ✓ Email sent successfully! I'll get back to you soon.
+                </div>
+              )}
+              {status === 'error' && (
+                <div className="bg-red-900/30 border border-red-500 text-red-400 p-3 rounded-lg text-sm">
+                  ✗ Failed to send email. Please try again.
+                </div>
+              )}
+
               <button
                 type="submit"
-                className="border border-white/15 drop-shadow-lg px-5 py-3 rounded-2xl hover:border-white/30 hover:text-white/90 transition-all"
+                disabled={loading}
+                className="w-full bg-white text-black font-bold py-3 rounded-lg hover:bg-gray-200 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                Send Message
+                {loading ? 'Sending...' : 'Send Message'}
               </button>
             </form>
-
-            {/* Socials */}
             <div className="mt-8 pt-8 border-t border-white/30">
-              <h3 className="text-lg font-semibold text-center mb-6">Connect With Me</h3>
               <div className="flex justify-center gap-6">
                 {socials.map((social) => {
                   const Icon = social.icon;
@@ -103,10 +136,10 @@ export default function Contact() {
                     <a
                       key={social.name}
                       href={social.url}
-                      className="text-white hover:text-gray-300 transition-colors"
+                      className="text-white hover:text-gray-300 text-sm transition-colors"
                       title={social.name}
                     >
-                      <Icon size={28} />
+                      <Icon size={20} />
                     </a>
                   );
                 })}
