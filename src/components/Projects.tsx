@@ -11,7 +11,7 @@ export default function Projects() {
         'SOLID principles implementation'
       ],
       tech: ['Java', 'LWJGL', 'Gradle', 'EventBus', "Documentation"],
-      link: '#'
+      link: 'https://github.com/ScRichard/Gothaj-Next-Gen'
     },
     {
       title: 'Uni 7',
@@ -25,7 +25,7 @@ export default function Projects() {
         'Custom coordinate-based rendering (x, y, z)'
       ],
       tech: ['Java', 'JavaFX', 'JUnit', 'Physics'],
-      link: '#'
+      link: 'https://github.com/ScRichard/Uni7'
     },
     {
       title: 'Portfolio Website',
@@ -39,7 +39,7 @@ export default function Projects() {
         'Modern UI/UX'
       ],
       tech: ['React', 'TypeScript', 'Tailwind CSS', 'Next.js'],
-      link: '#'
+      link: 'https://github.com/ScRichard/Personal-Website-Portfolio'
     },
     {
       title: 'VoidID (Comming soon)',
@@ -52,7 +52,7 @@ export default function Projects() {
         'RestAPI built with Java and Spring Boot',
       ],
       tech: ['React', 'TypeScript', 'Tailwind CSS', 'Next.js'],
-      link: '#'
+      link: 'https://github.com/ScRichard/VoidID'
     }
   ];
 
