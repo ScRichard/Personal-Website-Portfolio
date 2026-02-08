@@ -86,7 +86,7 @@ export default function Projects() {
                   </span>
                 ))}
               </div>
-              <a href="#" className="border border-white/15 drop-shadow-lg px-5 py-3 rounded-2xl hover:border-white/30 hover:text-white/90 transition-all">View Project →</a>
+              <a href={project.link} className="border border-white/15 drop-shadow-lg px-5 py-3 rounded-2xl hover:border-white/30 hover:text-white/90 transition-all">View Project →</a>
             </div>
           ))}
         </div>
