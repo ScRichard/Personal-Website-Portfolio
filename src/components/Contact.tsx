@@ -31,7 +31,7 @@ export default function Contact() {
   ];
 
   return (
-    <section id="about" className="bg-black text-white flex flex-col md:w-1/2 mx-auto px-4 py-4">
+    <section id="about" className="bg-black text-white flex flex-col md:w-3xl mx-auto px-4 py-4">
 
       <div className="text-xl mb-3 underline underline-offset-4">
         Contact
@@ -85,12 +85,12 @@ export default function Contact() {
                 ></textarea>
               </div>
               
-              <a
+              <button
                 type="submit"
-                className="bg-white w-20 h-12 text-black font-bold py-3 rounded-lg hover:bg-gray-200 transition-colors"
+                className="border border-white/15 drop-shadow-lg px-5 py-3 rounded-2xl hover:border-white/30 hover:text-white/90 transition-all"
               >
                 Send Message
-              </a>
+              </button>
             </form>
 
             {/* Socials */}

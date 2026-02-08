@@ -57,13 +57,13 @@ export default function Projects() {
   ];
 
   return (
-    <section id="about" className="bg-black text-white flex flex-col md:w-1/2 mx-auto px-4 py-4">
+    <section id="about" className=" text-white flex flex-col md:w-3xl mx-auto px-4 py-4">
         <div className="text-xl mb-3 underline underline-offset-4">
             Projects
         </div>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
           {projects.map((project, index) => (
-            <div key={index} className="bg-gray-900 border border-white/20 rounded-lg overflow-hidden p-6 flex flex-col justify-between">
+            <div key={index} className="border border-white/20 rounded-lg overflow-hidden p-6 flex flex-col justify-between">
               <h3 className="text-xl mb-3">{project.title}</h3>
               <p className="text-gray-200 mb-4 text-sm leading-relaxed">{project.description}</p>
               
