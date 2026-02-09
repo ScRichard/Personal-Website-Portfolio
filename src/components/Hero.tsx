@@ -20,7 +20,7 @@ export default function Hero() {
           </span>
           ))}
         </h1>
-        <p className="text-gray-400 text-center mt-2">Full-Stack Software Engineer based in Slovakia | Java | React | Next.js | TypeScript</p>
+        <p className="text-gray-400 text-center mt-2">Full-Stack Software Engineer based in Slovakia</p>
       </div>
       <a href="#about" onClick={(e) => handleNavClick(e, 'about')} className="border border-white/15 drop-shadow-lg px-5 py-3 rounded-2xl hover:border-white/30 hover:text-white/90 transition-all" title="Scroll to About section">View more</a>
     </section>
