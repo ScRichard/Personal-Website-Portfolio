@@ -1,0 +1,17 @@
+# Robots.txt for Richard Schmidt Portfolio
+User-agent: *
+Allow: /
+Disallow: /api/
+
+# Specific rules for major search engines
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+# Sitemap location
+Sitemap: https://richardschmidt.dev/sitemap.xml
+
+# Crawl delay to be respectful
+Crawl-delay: 1

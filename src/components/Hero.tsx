@@ -1,3 +1,5 @@
+'use client';
+
 export default function Hero() {
 
   const names = "Richard Schmidt".split("");
@@ -11,16 +13,16 @@ export default function Hero() {
   return (
     <section id="home" className=" text-white min-h-screen flex flex-col items-center justify-center gap-9 z-1">
       <div>
-        <div className="flex flex-wrap items-center justify-center gap-0.5 w-full max-w-5xl">
+        <h1 className="flex flex-wrap items-center justify-center gap-0.5 w-full max-w-5xl">
         {names.map((name, index) => (
-          <div key={index} className="text-xl drop-shadow-lg glow leading-none">
+          <span key={index} className="text-xl drop-shadow-lg glow leading-none">
             {name === " " ? "\u00A0" : name}
-          </div>
+          </span>
           ))}
-        </div>
-        <span className="text-gray-400">Software engineer based in Slovakia</span>
+        </h1>
+        <p className="text-gray-400 text-center mt-2">Full-Stack Software Engineer based in Slovakia | Java | React | Next.js | TypeScript</p>
       </div>
-      <a href="/" onClick={(e) => handleNavClick(e, 'about')} className="border border-white/15 drop-shadow-lg px-5 py-3 rounded-2xl hover:border-white/30 hover:text-white/90 transition-all">View more</a>
+      <a href="#about" onClick={(e) => handleNavClick(e, 'about')} className="border border-white/15 drop-shadow-lg px-5 py-3 rounded-2xl hover:border-white/30 hover:text-white/90 transition-all" title="Scroll to About section">View more</a>
     </section>
   );
 }

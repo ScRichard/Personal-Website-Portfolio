@@ -57,9 +57,9 @@ export default function Contact() {
   return (
     <section id="contact" className="text-white flex flex-col md:w-3xl mx-auto px-4 py-4">
 
-      <div className="text-xl mb-3 underline underline-offset-4">
+      <h2 className='text-xl mb-3 underline underline-offset-4'>
         Contact
-      </div>
+      </h2>
       <form onSubmit={handleSubmit} className="space-y-6">
               <div>
                 <label htmlFor="name" className="block text-sm font-semibold mb-2">
@@ -137,8 +137,9 @@ export default function Contact() {
                       key={social.name}
                       href={social.url}
                       className="text-white hover:text-gray-300 text-sm transition-colors"
-                      title={social.name}
-                    >
+                      title={social.name}                      aria-label={`Visit my ${social.name}`}
+                      target='_blank'
+                      rel='noopener noreferrer'                    >
                       <Icon size={20} />
                     </a>
                   );

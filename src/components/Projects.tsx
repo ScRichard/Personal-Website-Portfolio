@@ -58,12 +58,12 @@ export default function Projects() {
 
   return (
     <section id="projects" className=" text-white flex flex-col md:w-3xl mx-auto px-4 py-4">
-        <div className="text-xl mb-3 underline underline-offset-4">
+        <h2 className='text-xl mb-3 underline underline-offset-4'>
             Projects
-        </div>
+        </h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
           {projects.map((project, index) => (
-            <div key={index} className="border backdrop-blur-lg border-white/20 rounded-lg overflow-hidden p-6 flex flex-col justify-between">
+            <article key={index} className='border backdrop-blur-lg border-white/20 rounded-lg overflow-hidden p-6 flex flex-col justify-between'>
               <h3 className="text-xl mb-3">{project.title}</h3>
               <p className="text-gray-200 mb-4 text-sm leading-relaxed">{project.description}</p>
               
@@ -72,7 +72,7 @@ export default function Projects() {
                 <ul className="space-y-1">
                   {project.features.map((feature, i) => (
                     <li key={i} className="text-gray-200 text-xs flex items-start">
-                      <span className="mr-2">→</span>
+                      <span className='mr-2' aria-hidden='true'>→</span>
                       <span>{feature}</span>
                     </li>
                   ))}
@@ -81,13 +81,13 @@ export default function Projects() {
               
               <div className="flex flex-wrap gap-2 mb-4">
                 {project.tech.map((tech, i) => (
-                  <span key={i} className="bg-white text-black text-xs px-2 py-1 rounded-full">
+                  <span key={i} className='bg-white text-black text-xs px-2 py-1 rounded-full' role='doc-term'>
                     {tech}
                   </span>
                 ))}
               </div>
-              <a href={project.link} className="border border-white/15 drop-shadow-lg px-5 py-3 rounded-2xl hover:border-white/30 hover:text-white/90 transition-all">View Project →</a>
-            </div>
+              <a href={project.link} target='_blank' rel='noopener noreferrer' className='border border-white/15 drop-shadow-lg px-5 py-3 rounded-2xl hover:border-white/30 hover:text-white/90 transition-all' title={`View ${project.title} on GitHub`}>View Project →</a>
+            </article>
           ))}
         </div>
     </section>
