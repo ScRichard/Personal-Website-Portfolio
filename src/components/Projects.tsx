@@ -53,6 +53,19 @@ export default function Projects() {
       ],
       tech: ['React', 'TypeScript', 'Tailwind CSS', 'Next.js'],
       link: 'https://github.com/ScRichard/VoidID'
+    },
+    {
+      title: 'Gymboo - Website',
+      description: 'Modern responsive website showcasing projects and skills with clean design and smooth animations.',
+      features: [
+        'Modern and responsive',
+        'Dark mode theme',
+        'Slick design',
+        'Ree',
+        'RestAPI built with Java and Spring Boot',
+      ],
+      tech: ['React', 'TypeScript', 'Tailwind CSS', 'Next.js'],
+      link: 'https://github.com/ScRichard/VoidID'
     }
   ];
 
